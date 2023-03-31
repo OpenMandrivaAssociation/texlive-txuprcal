@@ -1,6 +1,6 @@
 Name:		texlive-txuprcal
 Version:	43327
-Release:	1
+Release:	2
 Summary:	Upright calligraphic font based on TX calligraphic
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/txuprcal
