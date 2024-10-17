@@ -3,7 +3,7 @@ Version:	43327
 Release:	2
 Summary:	Upright calligraphic font based on TX calligraphic
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/txuprcal
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/txuprcal
 License:	gpl3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/txuprcal.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/txuprcal.doc.r%{version}.tar.xz
