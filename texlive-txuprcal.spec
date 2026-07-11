@@ -1,41 +1,22 @@
-Name:		texlive-txuprcal
-Version:	43327
-Release:	2
+%global tl_name txuprcal
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.00
+Release:	%{tl_revision}.1
 Summary:	Upright calligraphic font based on TX calligraphic
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/txuprcal
+URL:		https://www.ctan.org/tex-archive/fonts/txuprcal
 License:	gpl3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/txuprcal.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/txuprcal.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/txuprcal.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/txuprcal.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This small package provides a means of loading as \mathcal an
-uprighted version of the calligraphic fonts from the TX font
-package. A scaled option to provided to allow arbitrary
-scaling.
+This small package provides a means of loading as \mathcal upright
+versions of the calligraphic fonts from the TX font package. A scaled
+option to provided to allow arbitrary scaling.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/txuprcal
-%{_texmfdistdir}/fonts/type1/public/txuprcal
-%{_texmfdistdir}/fonts/tfm/public/txuprcal
-%{_texmfdistdir}/fonts/map/dvips/txuprcal
-%doc %{_texmfdistdir}/doc/fonts/txuprcal
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
